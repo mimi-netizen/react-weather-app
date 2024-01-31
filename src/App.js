@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <Weather />
+        <Weather defaultCity="Nairobi" />
         <footer>
           Coded by {""}{" "}
           <a href="https://github.com/mimi-netizen">Celyne Kydd</a>,
