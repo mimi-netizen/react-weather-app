@@ -5,8 +5,11 @@ body {
 .Weather {
   border: 1px solid #dadde1;
   padding: 16px;
-  border-radius: 4px;
-  color: rgb(135, 135, 135);
+  border-radius: 6px;
+  color: wheat;
+  background-image: url("https://images.unsplash.com/photo-1561484930-998b6a7b22e8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DI");
+  background-size: cover;
+  background-position: center;
 }
 
 .Weather form {
@@ -14,7 +17,7 @@ body {
 }
 
 .Weather h1 {
-  color: #878787;
+  color: whitesmoke;
   font-size: 24px;
   font-weight: 100;
   margin: 20px 0 0 0;
@@ -33,23 +36,22 @@ body {
   list-style: none;
 }
 
-.Weather img {
+.Weather canvas {
   height: 64px;
-  width: 64px;
-  margin-right: 10px;
+  margin-top: 5px;
   display: inline-block;
 }
 
 .Weather .temperature {
   font-weight: bold;
-  color: rgb(33, 33, 33);
+  color: #ffb101;
   font-size: 44px;
   line-height: 64px;
   font-weight: 400;
 }
 
 .Weather .unit {
-  color: rgb(33, 33, 33);
+  color: #ffb101;
   font-size: 16px;
   font-weight: 400;
   position: relative;
