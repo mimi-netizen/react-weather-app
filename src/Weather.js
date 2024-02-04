@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import UpdatedDate from "./UpdatedDate";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
@@ -8,6 +8,11 @@ import WeatherIcon from "./WeatherIcon";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+
+  useEffect(() => {
+    search();
+  }, []); // Empty dependency array triggers the effect only once on component mount
+
   function handleResponse(response) {
     console.log(response.data);
     setWeatherData({
@@ -96,7 +101,6 @@ export default function Weather(props) {
       </div>
     );
   } else {
-    search();
     return "Loading...";
   }
 }
