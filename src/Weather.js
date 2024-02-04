@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import UpdatedDate from "./UpdatedDate";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
 import WeatherIcon from "./WeatherIcon";
@@ -13,6 +14,7 @@ export default function Weather(props) {
       ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main.humidity,
+      country: response.data.sys.country,
       date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
       icon: response.data.weather[0].icon,
@@ -77,12 +79,19 @@ export default function Weather(props) {
           </div>
           <div className="col-6">
             <ul>
-              <li>Precipitation 0%</li>
-              <li>Humidity {weatherData.humidity}%</li>
-              <li>Wind {weatherData.wind} km/h</li>
+              <li>
+                Country <span className="data">{weatherData.country}</span>
+              </li>
+              <li>
+                Humidity <span className="data">{weatherData.humidity}%</span>
+              </li>
+              <li>
+                Wind <span className="data">{weatherData.wind} km/h</span>
+              </li>
             </ul>
           </div>
         </div>
+        <WeatherForecast />
       </div>
     );
   } else {
