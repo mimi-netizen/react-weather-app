@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import WeatherIcon from "./WeatherIcon";
 import "./WeatherForecast.css";
 import axios from "axios";
+import WeatherDay from "./WeatherDay";
 
 export default function WeatherForecast(props) {
   let [loaded, setLoaded] = useState(false);
@@ -18,12 +19,7 @@ export default function WeatherForecast(props) {
       <div className="WeatherForecast">
         <div className="row">
           <div className="col">
-            <div className="WeatherForecast">{forecast[0].dt}</div>
-            <WeatherIcon code={forecast[0].weather[0].icon} />
-            <div className="WeatherForecast-temperatures">
-              <span className="max">{forecast[0].temp.max}°</span>
-              <span className="min">{forecast[0].temp.min}°</span>
-            </div>
+            <WeatherDay data={forecast[0]} />
           </div>
         </div>
       </div>
